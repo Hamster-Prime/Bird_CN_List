@@ -1,0 +1,93 @@
+name: Update IP Lists
+
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+
+jobs:
+  update-lists:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Create directory
+        run: mkdir -p Country_CIDR
+
+      - name: Download, process lists, and generate README
+        run: |
+          # 定义URL和文件映射
+          declare -A url_map
+          url_map["https://ispip.clang.cn/chinatelecom.txt"]="CN_CT.conf"
+          url_map["https://ispip.clang.cn/unicom_cnc.txt"]="CN_CU.conf"
+          url_map["https://ispip.clang.cn/cmcc.txt"]="CN_CM.conf"
+          url_map["https://ispip.clang.cn/chinabtn.txt"]="CN_BTN.conf"
+          url_map["https://ispip.clang.cn/cernet.txt"]="CN_CERNET.conf"
+          url_map["https://ispip.clang.cn/gwbn.txt"]="CN_GWBN.conf"
+          url_map["https://ispip.clang.cn/othernet.txt"]="CN_Other.conf"
+          url_map["https://ispip.clang.cn/chinatelecom_ipv6.txt"]="CN_CT_IPv6.conf"
+          url_map["https://ispip.clang.cn/unicom_cnc_ipv6.txt"]="CN_CU_IPv6.conf"
+          url_map["https://ispip.clang.cn/cmcc_ipv6.txt"]="CN_CM_IPv6.conf"
+          url_map["https://ispip.clang.cn/chinabtn_ipv6.txt"]="CN_BTN_IPv6.conf"
+          url_map["https://ispip.clang.cn/cernet_ipv6.txt"]="CN_CERNET_IPv6.conf"
+          url_map["https://ispip.clang.cn/gwbn_ipv6.txt"]="CN_GWBN_IPv6.conf"
+          url_map["https://ispip.clang.cn/othernet_ipv6.txt"]="CN_Other_IPv6.conf"
+
+          # 初始化统计变量
+          total_cidrs=0
+          successful_files=0
+          declare -A file_stats
+
+          # 下载和处理文件
+          for url in "${!url_map[@]}"; do
+            output_filename=${url_map[$url]}
+            content=$(curl -s "$url")
+            if [ -n "$content" ]; then
+              processed_content=$(echo "$content" | sed 's/^/route /;s/$/ via "lo";/')
+              echo "$processed_content" > "Country_CIDR/$output_filename"
+              line_count=$(echo "$processed_content" | wc -l)
+              file_stats["$output_filename"]=$line_count
+              total_cidrs=$((total_cidrs + line_count))
+              successful_files=$((successful_files + 1))
+            fi
+          done
+
+          # 生成README.md
+          TIMESTAMP=$(TZ='Asia/Shanghai' date +"%Y-%m-%d %H:%M:%S")
+          
+          {
+            echo "# 中国大陆IP地址路由表"
+            echo ""
+            echo "**注意：** 本项目中的IP列表从公开网站获取，仅供学习和测试使用。"
+            echo ""
+            echo "---"
+            echo ""
+            echo "## 📊 最新统计信息"
+            echo ""
+            echo "**最后更新时间:** $TIMESTAMP"
+            echo ""
+            echo "### 📈 总体统计"
+            echo "- **总CIDR记录数:** $total_cidrs"
+            echo "- **成功更新文件数:** $successful_files / ${#url_map[@]}"
+            echo ""
+            echo "### 📁 文件列表及CIDR数量"
+            echo ""
+            echo "| 文件名 | CIDR 数量 |"
+            echo "|---------|-----------|"
+            for filename in $(ls -1 Country_CIDR | sort); do
+              count=${file_stats[$filename]}
+              printf "| %-21s | %-9s |\n" "$filename" "$count"
+            done
+            echo ""
+            echo "---"
+            echo ""
+            echo "*此信息由 GitHub Actions 自动更新于 $TIMESTAMP*"
+          } > README.md
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Update IP lists and README"
+          branch: main
+          file_pattern: 'Country_CIDR/* README.md'

@@ -1,6 +1,6 @@
 # 中国大陆IP地址路由表
 
-**注意：** 本项目中的IP列表皆从 **[苍狼山庄](https://ispip.clang.cn/)** 获取，仅供学习和测试使用。
+**注意：** 本项目中的IP列表皆从 **[苍狼山庄](https://ispip.clang.cn/)** 与 **[bgptools/anycast-prefixes](https://github.com/bgptools/anycast-prefixes)** 获取，仅供学习和测试使用。
 
 ---
 

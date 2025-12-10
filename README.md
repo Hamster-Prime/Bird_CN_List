@@ -6,18 +6,18 @@
 
 ## 📊 最新统计信息
 
-**最后更新时间:** 2025-12-09 11:52:42
+**最后更新时间:** 2025-12-10 11:57:27
 
 ### 📈 总体统计
-- **总CIDR记录数:** 12530
+- **总CIDR记录数:** 12569
 - **成功更新文件数:** 16 / 16
 
 ### 📁 文件列表及CIDR数量
 
 | 文件名 | 运营商 | CIDR 数量 |
 |---------|---------|-----------|
-| Anycast.conf          | Anycast                   | 3958      |
-| Anycast_IPv6.conf     | Anycast IPv6              | 1431      |
+| Anycast.conf          | Anycast                   | 3970      |
+| Anycast_IPv6.conf     | Anycast IPv6              | 1454      |
 | CN_BTN.conf           | 中国广电              | 23        |
 | CN_BTN_IPv6.conf      | 中国广电 IPv6         | 18        |
 | CN_CERNET.conf        | 中国教育网           | 89        |
@@ -30,9 +30,9 @@
 | CN_CU_IPv6.conf       | 中国联通 IPv6         | 594       |
 | CN_GWBN.conf          | 电信通/长城宽带/鹏博士 | 94        |
 | CN_GWBN_IPv6.conf     | 电信通/长城宽带/鹏博士 IPv6 | 1         |
-| CN_Other.conf         | 中国其他ISP           | 1846      |
-| CN_Other_IPv6.conf    | 中国其他ISP IPv6      | 684       |
+| CN_Other.conf         | 中国其他ISP           | 1849      |
+| CN_Other_IPv6.conf    | 中国其他ISP IPv6      | 685       |
 
 ---
 
-*此信息由 GitHub Actions 自动更新于 2025-12-09 11:52:42*
+*此信息由 GitHub Actions 自动更新于 2025-12-10 11:57:27*

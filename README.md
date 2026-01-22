@@ -6,10 +6,10 @@
 
 ## 📊 最新统计信息
 
-**最后更新时间:** 2026-01-21 12:09:32
+**最后更新时间:** 2026-01-22 12:12:40
 
 ### 📈 总体统计
-- **总CIDR记录数:** 12673
+- **总CIDR记录数:** 12657
 - **成功更新文件数:** 16 / 16
 
 ### 📁 文件列表及CIDR数量
@@ -24,15 +24,15 @@
 | CN_CERNET_IPv6.conf   | 中国教育网 IPv6      | 38        |
 | CN_CM.conf            | 中国移动              | 296       |
 | CN_CM_IPv6.conf       | 中国移动 IPv6         | 66        |
-| CN_CT.conf            | 中国电信              | 1799      |
-| CN_CT_IPv6.conf       | 中国电信 IPv6         | 169       |
+| CN_CT.conf            | 中国电信              | 1798      |
+| CN_CT_IPv6.conf       | 中国电信 IPv6         | 168       |
 | CN_CU.conf            | 中国联通              | 1316      |
 | CN_CU_IPv6.conf       | 中国联通 IPv6         | 598       |
 | CN_GWBN.conf          | 电信通/长城宽带/鹏博士 | 94        |
 | CN_GWBN_IPv6.conf     | 电信通/长城宽带/鹏博士 IPv6 | 1         |
-| CN_Other.conf         | 中国其他ISP           | 1857      |
-| CN_Other_IPv6.conf    | 中国其他ISP IPv6      | 720       |
+| CN_Other.conf         | 中国其他ISP           | 1855      |
+| CN_Other_IPv6.conf    | 中国其他ISP IPv6      | 708       |
 
 ---
 
-*此信息由 GitHub Actions 自动更新于 2026-01-21 12:09:32*
+*此信息由 GitHub Actions 自动更新于 2026-01-22 12:12:40*

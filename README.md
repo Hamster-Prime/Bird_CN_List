@@ -6,18 +6,18 @@
 
 ## 📊 最新统计信息
 
-**最后更新时间:** 2026-03-03 00:37:01
+**最后更新时间:** 2026-03-04 00:39:08
 
 ### 📈 总体统计
-- **总CIDR记录数:** 12673
+- **总CIDR记录数:** 12823
 - **成功更新文件数:** 16 / 16
 
 ### 📁 文件列表及CIDR数量
 
 | 文件名 | 运营商 | CIDR 数量 |
 |---------|---------|-----------|
-| Anycast.conf          | Anycast                   | 4066      |
-| Anycast_IPv6.conf     | Anycast IPv6              | 1501      |
+| Anycast.conf          | Anycast                   | 4135      |
+| Anycast_IPv6.conf     | Anycast IPv6              | 1580      |
 | CN_BTN.conf           | 中国广电              | 23        |
 | CN_BTN_IPv6.conf      | 中国广电 IPv6         | 18        |
 | CN_CERNET.conf        | 中国教育网           | 89        |
@@ -26,13 +26,13 @@
 | CN_CM_IPv6.conf       | 中国移动 IPv6         | 66        |
 | CN_CT.conf            | 中国电信              | 1784      |
 | CN_CT_IPv6.conf       | 中国电信 IPv6         | 165       |
-| CN_CU.conf            | 中国联通              | 1332      |
-| CN_CU_IPv6.conf       | 中国联通 IPv6         | 596       |
+| CN_CU.conf            | 中国联通              | 1331      |
+| CN_CU_IPv6.conf       | 中国联通 IPv6         | 597       |
 | CN_GWBN.conf          | 电信通/长城宽带/鹏博士 | 67        |
 | CN_GWBN_IPv6.conf     | 电信通/长城宽带/鹏博士 IPv6 | 1         |
-| CN_Other.conf         | 中国其他ISP           | 1856      |
-| CN_Other_IPv6.conf    | 中国其他ISP IPv6      | 748       |
+| CN_Other.conf         | 中国其他ISP           | 1857      |
+| CN_Other_IPv6.conf    | 中国其他ISP IPv6      | 749       |
 
 ---
 
-*此信息由 GitHub Actions 自动更新于 2026-03-03 00:37:01*
+*此信息由 GitHub Actions 自动更新于 2026-03-04 00:39:08*
